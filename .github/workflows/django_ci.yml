@@ -26,13 +26,10 @@ jobs:
         run: |
           pipenv install --dev
 
-      - name: Activate virtual environment
-        run: pipenv shell
-
       - name: Run flake8
         run: |
           pipenv run flake8 .
 
       - name: Run tests
         run: |
-          python manage.py test
+          pipenv run python manage.py test
