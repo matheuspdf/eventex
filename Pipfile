@@ -10,9 +10,10 @@ dj-database-url = "*"
 dj-static = "*"
 gunicorn = "*"
 psycopg2-binary = "*"
-flake8 = "*"
+
 
 [dev-packages]
+flake8 = "*"
 
 [requires]
 python_version = "3.10"

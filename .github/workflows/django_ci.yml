@@ -1,4 +1,4 @@
-name: Python CI
+name: Django CI
 
 on:
   push:
@@ -7,26 +7,32 @@ on:
 
 jobs:
   build:
-    env:
-      PIPENV_NO_INHERIT: 1
-      PIPENV_IGNORE_VIRTUALENVS: 1
     runs-on: ubuntu-latest
 
-
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Set up Python 3.10
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v2
         with:
           python-version: '3.10'
-      - name: Install dependencies
+
+      - name: Install Pipenv
         run: |
           pip install pipenv
-          pipenv sync --dev
-          cp contrib/env-sample .env
-      - name: Lint with flake8
+
+      - name: Install dependencies
+        run: |
+          pipenv install --dev
+
+      - name: Activate virtual environment
+        run: pipenv shell
+
+      - name: Run flake8
         run: |
           pipenv run flake8 .
+
       - name: Run tests
         run: |
           python manage.py test
