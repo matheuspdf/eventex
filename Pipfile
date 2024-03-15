@@ -10,10 +10,14 @@ dj-database-url = "*"
 dj-static = "*"
 gunicorn = "*"
 psycopg2-binary = "*"
-
+ipython = "*"
+notebook = "==6.5.5"
+django-extensions = "*"
+traitlets = "==5.9.0"
 
 [dev-packages]
 flake8 = "*"
+jupyter = "*"
 
 [requires]
 python_version = "3.10"

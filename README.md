@@ -5,11 +5,10 @@ Sistema de Eventos encomendado pela Morena
 
 ## Como desenvolver?
 1. Clone o repositório.
-2. Crie um virtualenv com Python 3.5+
-3. Ative o virtualenv.
-4. Instale as dependências.
-5. Configure a instância com o .env
-6. Execute os testes.
+2. Crie e ative um ambiente virtual com Python 3.5+ usando o pipenv.
+3. Instale as dependências.
+4. Configure a instância com o .env
+5. Execute os testes.
 
 ```console
 git clone git@github.com:matheuspdf/eventex.git wttd
