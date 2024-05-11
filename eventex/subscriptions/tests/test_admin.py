@@ -25,8 +25,6 @@ class SubscriptionModelAdminTest(TestCase):
         mock = self.call_action()
         mock.assert_called_with(None, '1 inscrição foi marcada como paga.')
 
-        SubscriptionModelAdmin.message_user = old_message_user
-
     def call_action(self):
         queryset = Subscription.objects.all()
 
