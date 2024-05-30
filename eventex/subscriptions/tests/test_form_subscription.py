@@ -34,7 +34,7 @@ class SubscriptionFormTest(TestCase):
         form = self.make_validated_form(phone='')
         self.assertFalse(form.errors)
 
-    def test_must_onform_email_or_phone(self):
+    def test_must_inform_email_or_phone(self):
         """Email and phone are optional, but one must be informed"""
         form = self.make_validated_form(email='', phone='')
         self.assertListEqual(['__all__'], list(form.errors))
