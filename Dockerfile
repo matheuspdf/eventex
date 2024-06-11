@@ -21,7 +21,7 @@ RUN pipenv install --deploy --system
 COPY . /code
 
 ENV SECRET_KEY "yUmJW4nXzm3ecLpS4S7Dc7jPaje16aWMrOo1UxMJGcLsbkC00o"
-RUN python manage.py collectstatic --noinput
+# RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
 
