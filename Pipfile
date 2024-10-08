@@ -15,6 +15,8 @@ notebook = "==6.5.5"
 django-extensions = "*"
 traitlets = "==5.9.0"
 django-test-without-migrations = "*"
+sqlformatter = "*"
+jupyterlab-pygments = "*"
 
 [dev-packages]
 flake8 = "*"
