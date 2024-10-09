@@ -31,7 +31,7 @@ def create(request):
     _send_email('Confirmação de inscrição',
                 settings.DEFAULT_FROM_EMAIL,
                 subscription.email,
-                'subscriptions/subscription_detail.html',
+                'subscriptions/subscription_email.txt',
                 {'subscription': subscription})
 
     return HttpResponseRedirect(r('subscriptions:detail', subscription.pk))
