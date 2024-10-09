@@ -1,4 +1,4 @@
-ARG PYTHON_VERSION=3.10-slim-bullseye
+ARG PYTHON_VERSION=3.10-slim
 
 FROM python:${PYTHON_VERSION}
 
@@ -20,9 +20,9 @@ COPY Pipfile Pipfile.lock /code/
 RUN pipenv install --deploy --system
 COPY . /code
 
-ENV SECRET_KEY "yUmJW4nXzm3ecLpS4S7Dc7jPaje16aWMrOo1UxMJGcLsbkC00o"
-# RUN python manage.py collectstatic --noinput
+ENV SECRET_KEY "z2qrNgGtnBQCvgW8e8jcs9AiDBIAEaLE3DtC5WCfT47ztXkVUB"
+RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
 
-CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "eventex.wsgi"]
+CMD ["gunicorn","--bind",":8000","--workers","2","eventex.wsgi"]

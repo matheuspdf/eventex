@@ -56,12 +56,12 @@ class PeriodManagerTest(TestCase):
     def test_at_morning(self):
         qs = Talk.objects.at_morning()
         expected = ['Morning Talk']
-        self.assertQuerysetEqual(qs, expected, lambda o: o.title)
+        self.assertListEqual(list(qs.values_list('title', flat=True)), expected)
 
     def test_at_afternoon(self):
         qs = Talk.objects.at_afternoon()
         expected = ['Afternoon Talk']
-        self.assertQuerysetEqual(qs, expected, lambda o: o.title)
+        self.assertListEqual(list(qs.values_list('title', flat=True)), expected)
 
 
 class CourseModelTest(TestCase):
